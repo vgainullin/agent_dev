@@ -24,7 +24,7 @@ Path: `journal/YYYY-MM-DD-<slug>.md` (today's date, 2–4 word slug). Same-day w
 Commits: <first-sha>..<last-sha>
 
 ## Changed
-- <what, in one line each; link files>
+- <what, in one line each; name files in backticks (only the journal is published, so link only other entries)>
 
 ## Why
 - <decision and the reason; alternatives rejected>

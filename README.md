@@ -13,6 +13,7 @@ Template for scientific Python projects built with coding agents. Agent rules li
    uv run pytest
    ```
 4. Install Ponytail for your agent (`AGENTS.md` §0). Claude Code picks it up from `.claude/settings.json`.
+5. To publish the journal: Settings → Pages → Source: **GitHub Actions**.
 
 ## Layout
 
@@ -23,3 +24,5 @@ Template for scientific Python projects built with coding agents. Agent rules li
 | `tests/` | pytest + hypothesis. |
 | `.pre-commit-config.yaml` | ruff, pyright, fast tests, nbstripout, secret check. |
 | `.github/workflows/ci.yml` | Same checks on push and PR. |
+| `JOURNAL.md`, `journal/` | Development journal: summary plus dated entries, kept by `.claude/agents/historian.md`. |
+| `.github/workflows/journal.yml` | Publishes the journal (only) to GitHub Pages on merge to `main`. |
