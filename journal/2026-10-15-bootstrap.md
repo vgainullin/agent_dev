@@ -51,3 +51,23 @@ Commits: ebcb675..f95d14c
 - Plugin auto-enable through `.claude/settings.json` still untested (unverified).
 - Other actions still pinned to major tags, not SHAs.
 - Runners warn that `ubuntu-latest` moves to Ubuntu 26 from 2026-10-19.
+
+## Template and Pages enabled
+
+Commits: none since 81dcd18 (repo settings only)
+
+### Changed
+- Repo settings on GitHub (set by the user, not in git): template repository on, Pages on.
+
+### Why
+- Closes two manual setup steps left open in [GitHub push and CI fix](#github-push-and-ci-fix): the repo can be used as a template, and the journal workflow can publish.
+
+### Results
+- Public GitHub API for vgainullin/agent_dev: `is_template=true`, `has_pages=true` (checked by caller, 2026-10-15).
+- Pages source set to GitHub Actions (unverified; `has_pages` does not show the build source).
+
+### Negative results
+- none
+
+### Open
+- Confirm the journal workflow publishes on this commit once it reaches `main`.
