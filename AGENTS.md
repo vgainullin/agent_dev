@@ -17,6 +17,7 @@ Install from the official sources only: `DietrichGebert/ponytail` on GitHub or `
 Use:
 - Default mode `full`. Set via `PONYTAIL_DEFAULT_MODE=full` or `~/.config/ponytail/config.json`.
 - Run `/ponytail-review` on every diff before declaring done. Fix all "must fix" findings.
+- Every PR is also reviewed in CI by `.github/workflows/ponytail-review.yml` (needs an `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` repo secret; skips without one).
 - Run `/ponytail-audit` before a release or after any large refactor.
 - Run `/ponytail-debt` before each release; every `shortcut:` comment gets an owner or is resolved.
 - Shortcut format: `shortcut: <the limit>, <when to upgrade>`.

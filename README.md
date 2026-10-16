@@ -24,5 +24,6 @@ Template for scientific Python projects built with coding agents. Agent rules li
 | `tests/` | pytest + hypothesis. |
 | `.pre-commit-config.yaml` | ruff, pyright, fast tests, nbstripout, secret check. |
 | `.github/workflows/ci.yml` | Same checks on push and PR. |
+| `.github/workflows/ponytail-review.yml` | Ponytail review on every PR; needs an `ANTHROPIC_API_KEY` or `CLAUDE_CODE_OAUTH_TOKEN` secret. |
 | `JOURNAL.md`, `journal/` | Development journal: summary plus dated entries, kept by `.claude/agents/historian.md`. |
 | `.github/workflows/journal.yml` | Publishes the journal (only) to GitHub Pages on merge to `main`. |
