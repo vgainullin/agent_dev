@@ -92,6 +92,7 @@ If Ponytail cannot be installed in the current environment, state that at the to
 
 - Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`, `chore:`). Imperative mood, ≤ 72-char subject.
 - One logical change per commit. Diff stays as small as the task allows.
+- Every commit body states the problem, the change, how it was verified (commands run, test counts) and what was not checked. A subject line alone is not enough, especially on agent-attributed commits. Attribution trailers go last.
 - PR description: what changed, why, how it was verified, what was not checked.
 
 ## 9. Agent output style
