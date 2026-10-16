@@ -24,3 +24,30 @@ Commits: 7e7f298..311b0f6
 - CI and journal workflows not yet run on GitHub (unverified).
 - Plugin auto-enable through `.claude/settings.json` not tested (unverified).
 - Actions pinned to major versions, not commit SHAs.
+
+## GitHub push and CI fix
+
+Commits: ebcb675..f95d14c
+
+### Changed
+- Pushed to github.com/vgainullin/agent_dev; local commits rebased onto the remote's `Initial commit` (3560c62). README conflict resolved in favor of the template README; journal SHAs updated to rebased ones.
+- `README.md`: setup step to set Pages source to GitHub Actions; layout rows for the journal.
+- `.claude/agents/historian.md`: entries name files in backticks and link only other entries, since only the journal is published.
+- `.github/workflows/ci.yml`: `astral-sh/setup-uv` pinned to commit 1c37ad0 (v10.3.0).
+
+### Why
+- `setup-uv` has no floating `v10` tag upstream, only full versions (v10.0.0 to v10.3.0). Pinned to the commit SHA rather than a version tag, so the ref is immutable.
+
+### Results
+- CI on GitHub passes at f95d14c: ruff, format check, pyright, pytest (run 38851263361, 19 s).
+
+### Negative results
+- CI at ebcb675 failed at "Set up job": `Unable to resolve action astral-sh/setup-uv@v10` (run 38851139976).
+- Journal workflow at ebcb675 failed at `actions/configure-pages`: Pages site Not Found, because Pages is not enabled on the repo (run 38851140058). Expected until the Pages source is set to GitHub Actions.
+
+### Open
+- Enable Pages (Settings → Pages → Source: GitHub Actions), then rerun the journal workflow.
+- Mark the repo as a template (Settings → Template repository); manual step.
+- Plugin auto-enable through `.claude/settings.json` still untested (unverified).
+- Other actions still pinned to major tags, not SHAs.
+- Runners warn that `ubuntu-latest` moves to Ubuntu 26 from 2026-10-19.
